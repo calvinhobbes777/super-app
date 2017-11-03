@@ -1,1 +1,1 @@
-module.exports.get = {};
+module.exports = [...require("./heroes"), ...require("./villains")];

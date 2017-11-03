@@ -7,7 +7,7 @@ module.exports = {
 
     this.models.Hero
       .get(id)
-      .then(hero => hero.addRelation("villains", villain))
+      .then(hero => hero.addRelation("hero_archnemisis", villain))
       .then(result => reply(result))
       .catch(error => reply(error));
   }

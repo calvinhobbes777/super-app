@@ -1,18 +1,21 @@
-import React, { Component } from "react";
+import Home from "./Home";
+import CreateHero from "./CreateHero";
+import CreateVillain from "./CreateVillain";
+import EditHero from "./EditHero";
+import EditVillain from "./EditVillain";
+import HeroDetails from "./HeroDetails";
+import VillainDetails from "./VillainDetails";
+import ListHeroes from "./ListHeroes";
+import ListVillains from "./ListVillains";
 
-class Home extends Component {
-  constructor() {
-    super();
-
-    this.state = {};
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>HOME</h1>
-      </div>
-    );
-  }
-}
-export default Home;
+export {
+  Home,
+  CreateHero,
+  CreateVillain,
+  EditHero,
+  EditVillain,
+  HeroDetails,
+  VillainDetails,
+  ListHeroes,
+  ListVillains
+};

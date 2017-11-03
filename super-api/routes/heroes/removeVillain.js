@@ -1,12 +1,13 @@
 module.exports = {
-  path: "/api/heroes/{id}",
-  method: ["PUT", "PATCH"],
+  path: "/api/heroes/{id}/villain",
+  method: "DELETE",
   handler: function(request, reply) {
     let id = request.params.id;
-    let updateHero = request.payload;
+    let villain = request.payload;
+
     this.models.Hero
       .get(id)
-      .then(doc => doc.merge(updateHero))
+      .then(hero => hero.addRelation("hero_archnemisis", villain))
       .then(result => reply(result))
       .catch(error => reply(error));
   }

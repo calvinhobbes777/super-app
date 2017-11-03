@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "hapi": "^17.0.0-rc10",
+    "hapi": "16",
     "nodemon": "^1.12.1",
     "thinky": "^2.3.9"
   },

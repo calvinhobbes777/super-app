@@ -13,18 +13,6 @@ import {
   ListVillains
 } from "./views/index";
 
-import {
-  Home,
-  CreateHero,
-  CreateVillain,
-  EditHero,
-  EditVillain,
-  HeroDetails,
-  VillainDetails,
-  ListHeroes,
-  ListVillains
-} from "./views";
-
 class Router extends Component {
   render() {
     return (
@@ -33,7 +21,7 @@ class Router extends Component {
           <Route exact path={"/"} component={Home} />
           <Route exact path={"/heroes"} component={ListHeroes} />
           <Route exact path={"/villains"} component={ListVillains} />
-          <Route exact path={"/heros/new"} component={CreateHero} />
+          <Route exact path={"/heroes/new"} component={CreateHero} />
           <Route exact path={"/villains/new"} component={CreateVillain} />
           <Route exact path={"/heroes/:heroId"} component={HeroDetails} />
           <Route

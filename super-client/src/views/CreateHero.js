@@ -1,6 +1,7 @@
 import React, { Component } from "react";
+import api from "../api";
 
-class Home extends Component {
+class CreateHero extends Component {
   constructor() {
     super();
 
@@ -19,40 +20,52 @@ class Home extends Component {
     }));
   };
 
+  onFormSubmit = e => {
+    e.preventDefault();
+
+    api.heroes.create(this.state).then(() => {
+      this.props.history.push("/heroes");
+    });
+  };
+
   render() {
-    console.log(this.state);
     return (
       <div>
         <h1>Add Hero</h1>
 
-        <form>
+        <form onSubmit={this.onFormSubmit}>
+          Name:{" "}
           <input
             onChange={this.onInputChange}
             name={"name"}
             placeholder={"Name"}
             type={"text"}
           />
+          Power:{" "}
           <input
             onChange={this.onInputChange}
             name={"power"}
             placeholder={"Power"}
             type={"text"}
           />
+          Image:{" "}
           <input
             onChange={this.onInputChange}
             name={"image"}
             placeholder={"Image URL"}
             type={"text"}
           />
+          Biography:{" "}
           <textarea
             onChange={this.onInputChange}
             name={"bio"}
             placeholder={"Biography"}
             type={"text"}
-          />
+          />{" "}
+          <input type="submit" />
         </form>
       </div>
     );
   }
 }
-export default Home;
+export default CreateHero;
